@@ -316,6 +316,12 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Factor configuration with the FUEL:
+  (setq fuel-factor-root-dir "c:/Programs/Dev/factor.git")
+  (add-to-list 'load-path "c:/Programs/Dev/factor.git/misc/fuel")
+  (require 'factor-mode)
+  ;;  (require 'fuel-mode)
+
   ;; Add a friendly alias for the Emacs REPL function.
   (defalias 'ielm 'repl)
 
