@@ -48,8 +48,10 @@ values."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; semantic ;; This makes editing the dotfile really slow.
-     spell-checking
-     syntax-checking
+     ;; (spell-checking :variables
+     ;;                 spell-checking-enable-by-default nil)
+     ;; (syntax-checking :variables
+     ;;                  syntax-checking-enable-by-default nil)
      version-control
      )
    ;; List of additional packages that will be installed without being
