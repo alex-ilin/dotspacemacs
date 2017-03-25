@@ -53,6 +53,7 @@ values."
      ;;                 spell-checking-enable-by-default nil)
      ;; (syntax-checking :variables
      ;;                  syntax-checking-enable-by-default nil)
+     unimpaired
      version-control
      )
    ;; List of additional packages that will be installed without being
