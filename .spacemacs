@@ -318,6 +318,7 @@ you should place your code here."
   (setq make-backup-files nil)
   (setq auto-save-list-file-name nil)
   (setq auto-save-default nil)
+  (setq projectile-tags-command "ctags.exe -R -e")
   (setq powerline-default-separator 'box)
 
   ;; Factor configuration with the FUEL:
