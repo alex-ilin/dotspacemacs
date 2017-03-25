@@ -46,6 +46,7 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
+     ;; semantic ;; This makes editing the dotfile really slow.
      spell-checking
      syntax-checking
      version-control
