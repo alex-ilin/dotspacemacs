@@ -755,9 +755,6 @@ before packages are loaded."
   ;; Add a friendly alias for the Emacs REPL function.
   (defalias 'repl 'ielm)
 
-  ;; Arduino main file extension.
-  (add-to-list 'auto-mode-alist '("\\.ino\\'" . c-mode))
-
   ;; Object Pascal mode configuration
   (add-to-list 'load-path "C:/Programs/Dev/emacs-my/opascal")
   (autoload 'opascal-mode "OPascal")
