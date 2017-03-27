@@ -336,6 +336,9 @@ you should place your code here."
   ;; Add a friendly alias for the Emacs REPL function.
   (defalias 'ielm 'repl)
 
+  ;; Arduino main file extension.
+  (add-to-list 'auto-mode-alist '("\\.ino\\'" . c-mode))
+
   ;; Make avy use Dvorak home row.
   (setq avy-keys (?a ?o ?e ?u ?h ?t ?n ?s ?i ?d))
   )
