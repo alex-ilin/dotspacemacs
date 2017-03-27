@@ -325,6 +325,7 @@ you should place your code here."
   (setq auto-save-default nil)
   (setq projectile-tags-command "ctags.exe -R -e")
   (setq powerline-default-separator 'box)
+  (setq evil-cross-lines t)
 
   ;; Factor configuration with the FUEL:
   (setq fuel-factor-root-dir "c:/Programs/Dev/factor.git")
