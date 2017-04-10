@@ -311,6 +311,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; Make "nh" typed quickly exit from Insert mode to Normal mode.
   (setq-default evil-escape-key-sequence "nh")
+  (setq-default evil-escape-delay 0.2)
   )
 
 (defun dotspacemacs/user-config ()
