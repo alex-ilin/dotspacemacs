@@ -343,6 +343,9 @@ you should place your code here."
   ;; Make avy use Dvorak home row.
   (setq avy-keys '(?a ?o ?e ?u ?h ?t ?n ?s ?i ?d))
 
+  ;; Stop smartparens mode enabling itself everywhere.
+  (remove-hook 'prog-mode-hook #'smartparens-mode)
+
   ;; Persistent *scratch* buffer. Code taken from
   ;; https://dorophone.blogspot.co.uk/2011/11/how-to-make-emacs-scratch-buffer.html
   ;; I had to fix the issue with it creating unusable file names on Windows, like
