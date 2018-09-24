@@ -352,6 +352,12 @@ you should place your code here."
   ;; Arduino main file extension.
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c-mode))
 
+  ;; Object Pascal mode configuration
+  (autoload 'opascal-mode "OPascal")
+  (add-to-list 'auto-mode-alist
+               '("\\.\\(pas\\|dpr\\|dpk\\)\\'" . opascal-mode))
+  '(opascal-indent-level 2)
+
   ;; Make avy use Dvorak home row.
   (setq avy-keys '(?a ?o ?e ?u ?h ?t ?n ?s ?i ?d))
 
