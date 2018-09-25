@@ -347,7 +347,7 @@ you should place your code here."
   ;;  (require 'fuel-mode)
 
   ;; Add a friendly alias for the Emacs REPL function.
-  (defalias 'ielm 'repl)
+  (defalias 'repl 'ielm)
 
   ;; Arduino main file extension.
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c-mode))
