@@ -363,6 +363,10 @@ you should place your code here."
   (setq org-directory "d:/AI/org")
   (with-eval-after-load 'org (setq org-default-notes-file "refile.org"))
 
+  ;; Display time in the modeline.
+  (display-time-mode t)
+  (setq display-time-24hr-format t)
+
   ;; Make avy use Dvorak home row.
   (setq avy-keys '(?a ?o ?e ?u ?h ?t ?n ?s ?i ?d))
 
@@ -428,6 +432,7 @@ you should place your code here."
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
+ '(display-time-interval 10)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
    (--map
