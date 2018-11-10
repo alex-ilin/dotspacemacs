@@ -363,6 +363,9 @@ you should place your code here."
   (add-to-list 'auto-mode-alist
                '("\\.\\(pas\\|dpr\\|dpk\\)\\'" . opascal-mode))
 
+  (add-to-list 'load-path "c:/Programs/Dev/emacs/ecb")
+  (require 'ecb)
+
   ;; Org-mode configuration
   (setq org-directory "d:/AI/org")
   (with-eval-after-load 'org (setq org-default-notes-file "refile.org"))
@@ -437,6 +440,7 @@ you should place your code here."
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
  '(display-time-interval 10)
+ '(ecb-options-version "2.50")
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
    (--map
