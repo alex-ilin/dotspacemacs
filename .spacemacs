@@ -373,9 +373,6 @@ you should place your code here."
   (add-hook 'opascal-mode-hook
             (lambda () (setq imenu-generic-expression opascal-imenu-generic-expression)))
 
-  (add-to-list 'load-path "c:/Programs/Dev/emacs/ecb")
-  (require 'ecb)
-
   (add-to-list 'load-path "c:/Programs/Dev/emacs/toggle-test")
   (require 'toggle-test)
 
@@ -460,7 +457,6 @@ you should place your code here."
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
  '(display-time-interval 10)
- '(ecb-options-version "2.50")
  '(fci-always-use-textual-rule t)
  '(fci-rule-character 124)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
