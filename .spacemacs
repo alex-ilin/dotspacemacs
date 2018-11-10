@@ -381,6 +381,10 @@ you should place your code here."
   ;; Stop smartparens mode enabling itself everywhere.
   (remove-hook 'prog-mode-hook #'smartparens-mode)
 
+  ;; Add the fill column indicator to the programming modes.
+  (add-hook 'prog-mode-hook (lambda ()
+                              (fci-mode 1)))
+
   ;; Persistent *scratch* buffer. Code taken from
   ;; https://dorophone.blogspot.co.uk/2011/11/how-to-make-emacs-scratch-buffer.html
   ;; I had to fix the issue with it creating unusable file names on Windows, like
@@ -442,6 +446,8 @@ you should place your code here."
  '(cua-read-only-cursor-color "#859900")
  '(display-time-interval 10)
  '(ecb-options-version "2.50")
+ '(fci-always-use-textual-rule t)
+ '(fci-rule-character 124)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
    (--map
