@@ -573,9 +573,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; of the screen.
   ;; (global-set-key (kbd "C-c C-g") 'evil-escape)
 
-  ;; toggle-test key
-  (global-set-key (kbd "C-c t") 'tgt-toggle)
-
   ;; Make "nh" typed quickly exit from Insert mode to Normal mode.
   (setq-default evil-escape-key-sequence "nh")
   (setq-default evil-escape-delay 0.2)
@@ -776,9 +773,6 @@ before packages are loaded."
             (lambda ()
               (setq imenu-generic-expression opascal-imenu-generic-expression)
               (comment-set-column 0)))
-
-  (add-to-list 'load-path "c:/Programs/Dev/emacs-my/toggle-test")
-  (require 'toggle-test)
 
   ;; Org-mode configuration
   (setq org-directory "d:/AI/org")
