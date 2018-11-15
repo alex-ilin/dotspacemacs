@@ -344,6 +344,9 @@ you should place your code here."
   (setq projectile-tags-command "ctags.exe -R -e")
   (setq powerline-default-separator 'box)
   (setq evil-cross-lines t)
+  ;; Make "U" do the opposite of "u".
+  (define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
+
 
   ;; Factor configuration with the FUEL:
   (setq fuel-factor-root-dir "c:/Programs/Dev/factor.git")
