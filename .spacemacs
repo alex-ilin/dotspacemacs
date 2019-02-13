@@ -366,6 +366,12 @@ you should place your code here."
   (add-to-list 'auto-mode-alist
                '("\\.\\(pas\\|dpr\\|dpk\\)\\'" . opascal-mode))
 
+  ;; imenu support for the OPascal mode
+  (setq opascal-imenu-generic-expression
+        '(("methods" "\\(procedure\\|function\\|constructor\\|destructor\\)\\b+\\(.*\\)" 2)))
+  (add-hook 'opascal-mode-hook
+            (lambda () (setq imenu-generic-expression opascal-imenu-generic-expression)))
+
   (add-to-list 'load-path "c:/Programs/Dev/emacs/ecb")
   (require 'ecb)
 
