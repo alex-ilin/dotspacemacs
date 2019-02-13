@@ -365,7 +365,7 @@ you should place your code here."
   (autoload 'opascal-mode "OPascal")
   (add-to-list 'auto-mode-alist
                '("\\.\\(pas\\|dpr\\|dpk\\)\\'" . opascal-mode))
-  '(opascal-indent-level 2)
+  (setq opascal-indent-level 2)
 
   ;; imenu support for the OPascal mode
   (setq opascal-imenu-generic-expression
