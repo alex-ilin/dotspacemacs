@@ -394,9 +394,6 @@ you should place your code here."
   (add-hook 'prog-mode-hook (lambda ()
                               (fci-mode 1)))
 
-  ;; Use the Electric Pair mode to the programming modes.
-  (add-hook 'prog-mode-hook #'electric-pair-mode)
-
   ;; Persistent *scratch* buffer. Code taken from
   ;; https://dorophone.blogspot.co.uk/2011/11/how-to-make-emacs-scratch-buffer.html
   ;; I had to fix the issue with it creating unusable file names on Windows, like
