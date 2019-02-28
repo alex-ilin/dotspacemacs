@@ -438,7 +438,7 @@ you should place your code here."
   ;; Without further ado, load the saved scratch buffer.
   (load-persistent-scratch)
   ;; Install the hook to save the scratch buffer.
-  (push #'save-persistent-scratch kill-emacs-hook)
+  (pushnew #'save-persistent-scratch kill-emacs-hook)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
