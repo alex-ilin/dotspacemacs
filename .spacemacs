@@ -395,6 +395,12 @@ you should place your code here."
   (add-hook 'prog-mode-hook (lambda ()
                               (fci-mode 1)))
 
+  (defun ai-set-window-width-to-fill-column ()
+    "Set window width = (fill-column + 1) characters."
+    (interactive)
+    (evil-window-set-width (1+ fill-column)))
+  (global-set-key (kbd "C-c C-w C-w") 'ai-set-window-width-to-fill-column)
+
   ;; Yasnippet configuration.
   (define-key yas-minor-mode-map (kbd "<C-return>") 'yas-expand)
 
