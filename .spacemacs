@@ -379,6 +379,7 @@ you should place your code here."
 
   ;; Org-mode configuration
   (setq org-directory "d:/AI/org")
+  (setq org-startup-truncated nil)
   (with-eval-after-load 'org (setq org-default-notes-file "refile.org"))
 
   ;; Display time in the modeline.
