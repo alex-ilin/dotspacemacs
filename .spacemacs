@@ -357,6 +357,15 @@ you should place your code here."
   (require 'factor-mode)
   ;;  (require 'fuel-mode)
 
+  ;; Make Helm Swoop use the last search term, if there is no symbol at cursor.
+  ;; (Code from Helm Swoop documentation.)
+  (setq helm-swoop-pre-input-function
+        (lambda ()
+          (let (($pre-input (thing-at-point 'symbol)))
+            (if (eq (length $pre-input) 0)
+                helm-swoop-pattern ;; this variable keeps the last used words
+              $pre-input))))
+
   ;; Add a friendly alias for the Emacs REPL function.
   (defalias 'repl 'ielm)
 
