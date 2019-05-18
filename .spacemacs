@@ -363,7 +363,9 @@ you should place your code here."
         (lambda ()
           (let (($pre-input (thing-at-point 'symbol)))
             (if (eq (length $pre-input) 0)
-                helm-swoop-pattern ;; this variable keeps the last used words
+                (if (boundp 'helm-swoop-pattern)
+                    helm-swoop-pattern ;; this variable keeps the last used words
+                  "")
               $pre-input))))
 
   ;; Add a friendly alias for the Emacs REPL function.
