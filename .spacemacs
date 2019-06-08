@@ -810,6 +810,31 @@ before packages are loaded."
               (setq imenu-generic-expression opascal-imenu-generic-expression)
               (comment-set-column 0)))
 
+  (defun ai/delphi-related-files (path)
+    "File classification function for Projectile.
+
+If there is a file /a/b/c.pas, then its related test file is /a/b/Tests/cTest.pas,
+and the :other file is the test project main file: /a/b/Tests/cTestProject.dpr."
+    (if (string-match "\\(.+\\)/Tests/\\([^/\\]+\\)Test\\.pas" path)
+        ;; It's a test file, return the source file.
+        (let ((dir (match-string 1 path))
+              (file-name (match-string 2 path)))
+              (list :impl (concat dir "/" file-name ".pas")))
+      (if (string-match "\\(.+\\)/\\([^/\\]+\\)\\.pas" path)
+          ;; It's a source file, return the test files.
+          (let ((dir (match-string 1 path))
+                (file-name (match-string 2 path)))
+            (list :test (concat dir "/Tests/" file-name "Test.pas")
+                  :other (concat dir "/Tests/" file-name "TestProject.dpr")))
+        )))
+
+  ;; Projectile configuration for GNU Makefile projects.
+  (with-eval-after-load "projectile"
+    (projectile-update-project-type 'make
+                                    :marker-files '("GNUmakefile" "Makefile")
+                                    :related-files-fn #'ai/delphi-related-files
+                                    :run "make run"))
+
   ;; Org-mode configuration
   (setq org-directory "d:/AI/org")
   (setq org-startup-truncated nil)
