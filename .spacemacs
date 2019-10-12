@@ -403,6 +403,9 @@ you should place your code here."
   (setq org-startup-truncated nil)
   (with-eval-after-load 'org (setq org-default-notes-file "refile.org"))
 
+  ;; Make sure all saved files have the EOL at the end.
+  (setq require-final-newline t)
+
   ;; Display time in the modeline.
   (display-time-mode t)
   (setq display-time-24hr-format t)
