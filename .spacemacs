@@ -673,6 +673,10 @@ before packages are loaded."
   (add-hook 'prog-mode-hook (lambda ()
                               (fci-mode 1)))
 
+  ;; Add the automatic line wrapping to the programming modes.
+  (add-hook 'prog-mode-hook (lambda ()
+                              (auto-fill-mode 1)))
+
   (defun ai-set-window-width-to-fill-column ()
     "Set window width = (fill-column + 1) characters."
     (interactive)
