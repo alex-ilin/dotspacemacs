@@ -663,6 +663,9 @@ before packages are loaded."
   ;; Make avy use Dvorak home row.
   (setq avy-keys '(?a ?o ?e ?u ?h ?t ?n ?s ?i ?d))
 
+  ;; Set the scroll margin.
+  (setq scroll-margin 5)
+
   ;; Stop smartparens mode enabling itself everywhere.
   (remove-hook 'prog-mode-hook #'smartparens-mode)
 
