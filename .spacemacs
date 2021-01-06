@@ -226,7 +226,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("Andale Mono"
-                               :size 10
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
