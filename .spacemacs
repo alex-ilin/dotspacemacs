@@ -596,7 +596,7 @@ before packages are loaded."
   (add-hook 'opascal-mode-hook
             (lambda () (setq imenu-generic-expression opascal-imenu-generic-expression)))
 
-  (add-to-list 'load-path "c:/Programs/Dev/emacs/toggle-test")
+  (add-to-list 'load-path "c:/Programs/Dev/emacs-my/toggle-test")
   (require 'toggle-test)
 
   ;; Org-mode configuration
