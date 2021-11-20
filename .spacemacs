@@ -583,15 +583,15 @@ before packages are loaded."
   ;; Make "U" do the opposite of "u".
   (define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
 
-  ;; Idris mode support.
-  (add-to-list 'load-path "c:/Programs/Dev/idris/prop-menu")
-  (add-to-list 'load-path "c:/Programs/Dev/idris/idris-mode")
-  (add-to-list 'exec-path "c:/Programs/Dev/idris")
-  (require 'idris-mode)
-  (with-eval-after-load 'idris-mode
-    (setq idris-stay-in-current-window-on-compiler-error t)
-    (dolist (x '("*idris-notes*" "*idris-holes*" "*idris-info*"))
-      (plist-put (cdr (assoc x popwin:special-display-config)) :noselect t)))
+  ;; ;; Idris mode support.
+  ;; (add-to-list 'load-path "c:/Programs/Dev/idris/prop-menu")
+  ;; (add-to-list 'load-path "c:/Programs/Dev/idris/idris-mode")
+  ;; (add-to-list 'exec-path "c:/Programs/Dev/idris")
+  ;; (require 'idris-mode)
+  ;; (with-eval-after-load 'idris-mode
+  ;;   (setq idris-stay-in-current-window-on-compiler-error t)
+  ;;   (dolist (x '("*idris-notes*" "*idris-holes*" "*idris-info*"))
+  ;;     (plist-put (cdr (assoc x popwin:special-display-config)) :noselect t)))
 
   ;; Factor configuration with the FUEL:
   (setq fuel-factor-root-dir "c:/Programs/Dev/factor.git")
