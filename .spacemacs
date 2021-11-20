@@ -677,6 +677,10 @@ before packages are loaded."
   (add-hook 'prog-mode-hook (lambda ()
                               (auto-fill-mode 1)))
 
+  ;; On Gitter @adrianbrink recommended this setting, but I don't see it in the
+  ;; autocomplete list. Maybe it's supported by a later version of Spacemacs.
+  ;; (spacemacs/toggle-fill-column-indicator-globally-on)
+
   (defun ai-set-window-width-to-fill-column ()
     "Set window width = (fill-column + 1) characters."
     (interactive)
