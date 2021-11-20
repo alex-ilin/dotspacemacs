@@ -220,11 +220,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, *scratch* buffer will be persistent. Things you write down in
    ;; *scratch* buffer will be saved and restored automatically.
-   dotspacemacs-scratch-buffer-persistent nil
+   dotspacemacs-scratch-buffer-persistent t
 
    ;; If non-nil, `kill-buffer' on *scratch* buffer
    ;; will bury it instead of killing.
-   dotspacemacs-scratch-buffer-unkillable nil
+   dotspacemacs-scratch-buffer-unkillable t
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
@@ -724,48 +724,6 @@ before packages are loaded."
 
   ;; Yasnippet configuration.
   (define-key yas-minor-mode-map (kbd "<C-return>") 'yas-expand)
-
-  ;; Persistent *scratch* buffer. Code taken from
-  ;; https://dorophone.blogspot.co.uk/2011/11/how-to-make-emacs-scratch-buffer.html
-  ;; I had to fix the issue with it creating unusable file names on Windows, like
-  ;; 20:00:00 with the current time.
-  (defvar persistent-scratch-filename
-    "~/.emacs.d/.cache/persistent-scratch/scratch"
-    "Location of *scratch* file contents for persistent-scratch.")
-  (defvar persistent-scratch-backup-directory
-    "~/.emacs.d/.cache/persistent-scratch/"
-    "Location of backups of the *scratch* buffer contents for
-    persistent-scratch.")
-  (defun make-persistent-scratch-backup-name ()
-    "Create a filename to backup the current scratch file by
-  concatenating PERSISTENT-SCRATCH-BACKUP-DIRECTORY with the
-  current date and time."
-    (concat
-      persistent-scratch-backup-directory
-      (replace-regexp-in-string (regexp-quote ":") "-"
-        (replace-regexp-in-string (regexp-quote " ") "-"
-          (current-time-string)))))
-  (defun save-persistent-scratch ()
-    "Write the contents of *scratch* to the file name
-  PERSISTENT-SCRATCH-FILENAME, making a backup copy in
-  PERSISTENT-SCRATCH-BACKUP-DIRECTORY."
-    (with-current-buffer (get-buffer "*scratch*")
-      (if (file-exists-p persistent-scratch-filename)
-          (copy-file persistent-scratch-filename
-                     (make-persistent-scratch-backup-name)))
-      (write-region (point-min) (point-max)
-                    persistent-scratch-filename)))
-  (defun load-persistent-scratch ()
-    "Load the contents of PERSISTENT-SCRATCH-FILENAME into the
-  scratch buffer, clearing its contents first."
-    (if (file-exists-p persistent-scratch-filename)
-        (with-current-buffer (get-buffer "*scratch*")
-          (delete-region (point-min) (point-max))
-          (shell-command (format "cat %s" persistent-scratch-filename) (current-buffer)))))
-  ;; Without further ado, load the saved scratch buffer.
-  (load-persistent-scratch)
-  ;; Install the hook to save the scratch buffer.
-  (pushnew #'save-persistent-scratch kill-emacs-hook)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
