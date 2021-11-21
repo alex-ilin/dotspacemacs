@@ -592,6 +592,10 @@ before packages are loaded."
   (spacemacs/toggle-fill-column-indicator-globally-on)
   (spacemacs/toggle-auto-fill-mode-on)
 
+  ;; Alt+Up/Down to move the currently selected lines up or down.
+  (global-set-key (kbd "<M-up>") 'drag-stuff-up)
+  (global-set-key (kbd "<M-down>") 'drag-stuff-down)
+
   ;; ;; Idris mode support.
   ;; (add-to-list 'load-path "c:/Programs/Dev/idris/prop-menu")
   ;; (add-to-list 'load-path "c:/Programs/Dev/idris/idris-mode")
