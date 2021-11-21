@@ -50,7 +50,7 @@ This function should only modify configuration layer settings."
      helm
      imenu-list
      ;; lsp
-     ;; markdown
+     markdown
      multiple-cursors
      org
      ranger
