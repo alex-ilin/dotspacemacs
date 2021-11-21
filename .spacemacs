@@ -587,6 +587,11 @@ before packages are loaded."
   ;; call dekstop-revert. The latter doesn't work if pasted here, though.
   ;; (desktop-save-mode 1)
 
+  ;; Enable the fill column indicator globally and the automatic fill mode,
+  ;; which wraps the lines that get too long as you type.
+  (spacemacs/toggle-fill-column-indicator-globally-on)
+  (spacemacs/toggle-auto-fill-mode-on)
+
   ;; ;; Idris mode support.
   ;; (add-to-list 'load-path "c:/Programs/Dev/idris/prop-menu")
   ;; (add-to-list 'load-path "c:/Programs/Dev/idris/idris-mode")
@@ -712,10 +717,6 @@ before packages are loaded."
   ;; Add the automatic line wrapping to the programming modes.
   (add-hook 'prog-mode-hook (lambda ()
                               (auto-fill-mode 1)))
-
-  ;; On Gitter @adrianbrink recommended this setting, but I don't see it in the
-  ;; autocomplete list. Maybe it's supported by a later version of Spacemacs.
-  ;; (spacemacs/toggle-fill-column-indicator-globally-on)
 
   (defun ai-set-window-width-to-fill-column ()
     "Set window width = (fill-column + 1) characters."
