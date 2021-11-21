@@ -583,6 +583,10 @@ before packages are loaded."
   ;; Make "U" do the opposite of "u".
   (define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
 
+  ;; Save the position of the Emacs window. To restore the last saved position,
+  ;; call dekstop-revert. The latter doesn't work if pasted here, though.
+  ;; (desktop-save-mode 1)
+
   ;; ;; Idris mode support.
   ;; (add-to-list 'load-path "c:/Programs/Dev/idris/prop-menu")
   ;; (add-to-list 'load-path "c:/Programs/Dev/idris/idris-mode")
