@@ -859,7 +859,7 @@ before packages are loaded."
                               (auto-fill-mode 1)))
 
   (defun ai-set-window-width-to-fill-column ()
-    "Set window width = (fill-column + 1) characters."
+    "Set window width = (fill-column + 7) characters."
     (interactive)
     (evil-window-set-width (+ 7 fill-column)))
   (global-set-key (kbd "C-c C-w C-w") 'ai-set-window-width-to-fill-column)
