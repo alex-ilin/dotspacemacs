@@ -932,6 +932,7 @@ This function is called at the very end of Spacemacs initialization."
      (projectile-project-run-cmd . "exe/Riedl_SAE_CA.exe")
      (projectile-project-compilation-cmd . "make all")))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
+ '(sort-fold-case t)
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
  '(vc-annotate-background nil)
