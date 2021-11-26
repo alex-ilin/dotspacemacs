@@ -279,7 +279,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts.
    ;; The actual font is not set here, search for 'default-frame-alist below.
    dotspacemacs-default-font '("Andale Mono"
-                               :size 16
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
@@ -612,7 +612,7 @@ before packages are loaded."
   ;; Add character combinations to be picked up by the auto-composition-mode and
   ;; replaced with font ligatures. The font is set here, because the
   ;; dotspacemacs-default-font seems to ignore the antialias option.
-  (add-to-list 'default-frame-alist '(font . "Fira Code-12:antialias=subpixel"))
+  (add-to-list 'default-frame-alist '(font . "Fira Code-10:weight=light:antialias=subpixel"))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                  (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                  (36 . ".\\(?:>\\)")
