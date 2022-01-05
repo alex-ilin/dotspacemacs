@@ -587,6 +587,9 @@ before packages are loaded."
   ;; M-k for the latter.
   (define-key evil-normal-state-map (kbd "D") 'evil-delete-whole-line)
 
+  ;; Make the carendar show Monday as the first day of the week.
+  (setq calendar-week-start-day 1)
+
   ;; Save the position of the Emacs window. To restore the last saved position,
   ;; call dekstop-revert. The latter doesn't work if pasted here, though.
   ;; (desktop-save-mode 1)
