@@ -616,7 +616,7 @@ before packages are loaded."
   (setq fuel-factor-root-dir "c:/Programs/Dev/factor.git")
   (add-to-list 'load-path "c:/Programs/Dev/factor.git/misc/fuel")
   (require 'factor-mode)
-  ;;  (require 'fuel-mode)
+  (require 'fuel-mode)
 
   ;; Make Helm Swoop use the last search term, if there is no symbol at cursor.
   ;; (Code from Helm Swoop documentation.)
