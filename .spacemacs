@@ -755,6 +755,13 @@ This function is called at the very end of Spacemacs initialization."
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#272822" "#F92672" "#A6E22E" "#E6DB74" "#66D9EF" "#FD5FF0" "#A1EFE4" "#F8F8F2"])
+ '(company-backends
+   '(company-bbdb company-semantic company-cmake company-capf company-clang company-files
+                  (company-dabbrev-code company-gtags company-etags company-keywords)
+                  company-dabbrev))
+ '(company-keywords-ignore-case t)
+ '(company-quick-access-keys '("a" "o" "e" "u" "h" "t" "s" "i" "d"))
+ '(company-show-quick-access 'left)
  '(compilation-message-face 'default)
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#839496")
