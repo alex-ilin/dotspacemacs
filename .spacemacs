@@ -793,6 +793,12 @@ before packages are loaded."
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
+ '(safe-local-variable-values
+   '((projectile-project-run-cmd . "CompileAll.exe")
+     (projectile-project-compilation-cmd . "make")
+     (projectile-project-test-cmd . "make test")
+     (projectile-project-run-cmd . "exe/Riedl_SAE_CA.exe")
+     (projectile-project-compilation-cmd . "make all")))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
