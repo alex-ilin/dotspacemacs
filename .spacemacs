@@ -768,6 +768,7 @@ This function is called at the very end of Spacemacs initialization."
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
  '(display-time-interval 10)
+ '(evil-want-Y-yank-to-eol nil)
  '(fci-always-use-textual-rule t)
  '(fci-rule-character 124)
  '(highlight-changes-colors '("#FD5FF0" "#AE81FF"))
