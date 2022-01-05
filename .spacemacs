@@ -637,6 +637,7 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\.ino\\'" . c-mode))
 
   ;; Object Pascal mode configuration
+  (add-to-list 'load-path "C:/Programs/Dev/emacs-my/opascal")
   (autoload 'opascal-mode "OPascal")
   (add-to-list 'auto-mode-alist
                '("\\.\\(pas\\|dpr\\|dpk\\)\\'" . opascal-mode))
