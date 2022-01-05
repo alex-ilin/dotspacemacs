@@ -597,7 +597,6 @@ before packages are loaded."
   ;; Enable the fill column indicator globally and the automatic fill mode,
   ;; which wraps the lines that get too long as you type.
   (spacemacs/toggle-fill-column-indicator-globally-on)
-  (spacemacs/toggle-auto-fill-mode-on)
 
   ;; Alt+Up/Down to move the currently selected lines up or down.
   (global-set-key (kbd "<M-up>") 'drag-stuff-up)
@@ -726,7 +725,7 @@ before packages are loaded."
 
   ;; Add the fill column indicator to the programming modes.
   (add-hook 'prog-mode-hook (lambda ()
-                              (fci-mode 1)))
+                              (spacemacs/toggle-auto-fill-mode-on)))
 
   ;; Add the automatic line wrapping to the programming modes.
   (add-hook 'prog-mode-hook (lambda ()
