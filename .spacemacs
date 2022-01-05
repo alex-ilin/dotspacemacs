@@ -647,7 +647,9 @@ before packages are loaded."
   (setq opascal-imenu-generic-expression
         '(("methods" "\\(procedure\\|function\\|constructor\\|destructor\\)\\b+\\(.*\\)" 2)))
   (add-hook 'opascal-mode-hook
-            (lambda () (setq imenu-generic-expression opascal-imenu-generic-expression)))
+            (lambda ()
+              (setq imenu-generic-expression opascal-imenu-generic-expression)
+              (comment-set-column 0)))
 
   (add-to-list 'load-path "c:/Programs/Dev/emacs-my/toggle-test")
   (require 'toggle-test)
