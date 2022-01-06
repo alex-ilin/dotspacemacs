@@ -692,22 +692,24 @@ before packages are loaded."
   ;; The ligatures make Helm loop infinitely due to char 46 (full stop), see
   ;; comments in the documentation
   ;; https://github.com/tonsky/FiraCode/wiki/Emacs-instructions).
-  (add-hook 'helm-major-mode-hook
-            (lambda ()
-              (setq auto-composition-mode nil)))
+  ;; (add-hook 'helm-major-mode-hook
+  ;;           (lambda ()
+  ;;             (setq auto-composition-mode nil)))
 
   ;; Apparently, there is some trouble with char 45 (minus) in EDiff mode, so
   ;; disable the ligatures there as well.
-  (add-hook 'ediff-mode-hook
-            (lambda ()
-              (setq auto-composition-mode nil)))
+  ;; (add-hook 'ediff-mode-hook
+  ;;           (lambda ()
+  ;;             (setq auto-composition-mode nil)))
 
   ;; It might even be a good idea to only enable the ligatures in programming
   ;; modes to avoid any possible trouble with other modes. Here's one way to do
-  ;; it, but probably not the best option in Spacemacs:
-  ;; (use-package composite
-  ;;   :hook (prog-mode . auto-composition-mode)
-  ;;   :init (global-auto-composition-mode -1))
+  ;; it, but probably not the best option in Spacemacs, but it seems to work. I
+  ;; had to enable it when Emags hanged while trying to show the Customize
+  ;; interface, and I didn't want to add another mode to the exception list.
+  (use-package composite
+    :hook (prog-mode . auto-composition-mode)
+    :init (global-auto-composition-mode -1))
 
   ;; Save the position of the Emacs window. To restore the last saved position,
   ;; call dekstop-revert. The latter doesn't work if pasted here, though.
