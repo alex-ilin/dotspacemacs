@@ -255,7 +255,29 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
+   ;; dotspacemacs-default-font '("JetBrains Mono"
+   ;;                             :size 17
+   ;;                             :weight light
+   ;;                             :width normal
+   ;;                             :antialias subpixel
+   ;;                             :powerline-scale 1.0)
+
+   ;; dotspacemacs-default-font '("Victor Mono"
+   ;;                             :size 15
+   ;;                             :weight regular
+   ;;                             :width normal
+   ;;                             :antialias subpixel
+   ;;                             :powerline-scale 1.0)
+
+   ;; dotspacemacs-default-font '("Fira Code"
+   ;;                             :size 15
+   ;;                             :weight regular
+   ;;                             :width normal
+   ;;                             :antialias subpixel
+   ;;                             :powerline-scale 1.0)
+
    ;; Default font or prioritized list of fonts.
+   ;; The actual font is not set here, search for 'default-frame-alist below.
    dotspacemacs-default-font '("Andale Mono"
                                :size 16
                                :weight normal
@@ -589,6 +611,103 @@ before packages are loaded."
 
   ;; Make the carendar show Monday as the first day of the week.
   (setq calendar-week-start-day 1)
+
+  ;; Add character combinations to be picked up by the auto-composition-mode and
+  ;; replaced with font ligatures. The font is set here, because the
+  ;; dotspacemacs-default-font seems to ignore the antialias option.
+  (add-to-list 'default-frame-alist '(font . "Fira Code-12:antialias=subpixel"))
+  (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
+                 (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
+                 (36 . ".\\(?:>\\)")
+                 (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
+                 (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
+                 (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
+                 (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
+                 (45 . ".\\(?:-*\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+                 (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+                 ;; Added /\ for logical and.
+                 (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/\\\\=>]\\)")
+                 (48 . ".\\(?:x[a-fA-F0-9]\\)")
+                 (58 . ".\\(?:::\\|[:=]\\)")
+                 ;; Simplified the regex.
+                 (59 . ".\\(?:;;?\\)")
+                 ;; (59 . ".\\(?:;;\\|;\\)")
+                 ;; Removed <> because it looks wrong in Pascal.
+                 (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=|-]\\)")
+                 ;; (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
+                 (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
+                 (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
+                 (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
+                 (91 . ".\\(?:]\\)")
+                 ;; Added \/ for logical or.
+                 (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\|/\\)")
+                 (94 . ".\\(?:=\\)")
+                 (119 . ".\\(?:ww\\)")
+                 (123 . ".\\(?:-\\)")
+                 (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
+                 (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
+                 )
+               ))
+    (dolist (char-regexp alist)
+      (set-char-table-range composition-function-table (car char-regexp)
+                            `([,(cdr char-regexp) 0 font-shape-gstring]))))
+
+  ;; A more readable regexes for the above, but they only support fixed-length
+  ;; matches, so no way to make long arrows. Author's page:
+  ;; https://andreyorst.gitlab.io/posts/2020-07-21-programming-ligatures-in-emacs/
+  ;; (let ((ligatures `((?-  . ,(regexp-opt '("-|" "-~" "---" "-<<" "-<" "--" "->" "->>" "-->")))
+  ;;                  (?/  . ,(regexp-opt '("/**" "/*" "///" "/=" "/==" "/>" "//" "/\\")))
+  ;;                  (?*  . ,(regexp-opt '("*>" "***" "*/")))
+  ;;                  ;; Removed <> because it looks wrong in Pascal.
+  ;;                  (?<  . ,(regexp-opt '("<-" "<<-" "<=>" "<=" "<|" "<||" "<|||::=" "<|>" "<:" "<-<"
+  ;;                                        "<<<" "<==" "<<=" "<=<" "<==>" "<-|" "<<" "<~>" "<=|" "<~~" "<~"
+  ;;                                        "<$>" "<$" "<+>" "<+" "</>" "</" "<*" "<*>" "<->" "<!--")))
+  ;;                  (?:  . ,(regexp-opt '(":>" ":<" ":::" "::" ":?" ":?>" ":=")))
+  ;;                  (?=  . ,(regexp-opt '("=>>" "==>" "=/=" "=!=" "=>" "===" "=:=" "==")))
+  ;;                  (?!  . ,(regexp-opt '("!==" "!!" "!=")))
+  ;;                  (?>  . ,(regexp-opt '(">]" ">:" ">>-" ">>=" ">=>" ">>>" ">-" ">=")))
+  ;;                  (?&  . ,(regexp-opt '("&&&" "&&")))
+  ;;                  (?|  . ,(regexp-opt '("|||>" "||>" "|>" "|]" "|}" "|=>" "|->" "|=" "||-" "|-" "||=" "||")))
+  ;;                  (?.  . ,(regexp-opt '(".." ".?" ".=" ".-" "..<" "...")))
+  ;;                  (?+  . ,(regexp-opt '("+++" "+>" "++")))
+  ;;                  (?\[ . ,(regexp-opt '("[||]" "[<" "[|")))
+  ;;                  (?\{ . ,(regexp-opt '("{|")))
+  ;;                  (?\? . ,(regexp-opt '("??" "?." "?=" "?:")))
+  ;;                  (?#  . ,(regexp-opt '("####" "###" "#[" "#{" "#=" "#!" "#:" "#_(" "#_" "#?" "#(" "##")))
+  ;;                  (?\; . ,(regexp-opt '(";;")))
+  ;;                  (?_  . ,(regexp-opt '("_|_" "__")))
+  ;; Added some escaped characters, but these don't work very well. The font
+  ;; attempts to deemphasize the escaping backslash by reducing its width, but
+  ;; that doesn't work very well for normal width fonts.
+  ;;                  (?\\ . ,(regexp-opt '("\\" "\\/" "\\n" "\\r" "\\t" "\\v")))
+  ;;                  (?~  . ,(regexp-opt '("~~" "~~>" "~>" "~=" "~-" "~@")))
+  ;;                  (?$  . ,(regexp-opt '("$>")))
+  ;;                  (?^  . ,(regexp-opt '("^=")))
+  ;;                  (?w  . ,(regexp-opt '("www")))
+  ;;                  (?\] . ,(regexp-opt '("]#"))))))
+  ;; (dolist (char-regexp ligatures)
+  ;;   (set-char-table-range composition-function-table (car char-regexp)
+  ;;                         `([,(cdr char-regexp) 0 font-shape-gstring]))))
+
+  ;; The ligatures make Helm loop infinitely due to char 46 (full stop), see
+  ;; comments in the documentation
+  ;; https://github.com/tonsky/FiraCode/wiki/Emacs-instructions).
+  (add-hook 'helm-major-mode-hook
+            (lambda ()
+              (setq auto-composition-mode nil)))
+
+  ;; Apparently, there is some trouble with char 45 (minus) in EDiff mode, so
+  ;; disable the ligatures there as well.
+  (add-hook 'ediff-mode-hook
+            (lambda ()
+              (setq auto-composition-mode nil)))
+
+  ;; It might even be a good idea to only enable the ligatures in programming
+  ;; modes to avoid any possible trouble with other modes. Here's one way to do
+  ;; it, but probably not the best option in Spacemacs:
+  ;; (use-package composite
+  ;;   :hook (prog-mode . auto-composition-mode)
+  ;;   :init (global-auto-composition-mode -1))
 
   ;; Save the position of the Emacs window. To restore the last saved position,
   ;; call dekstop-revert. The latter doesn't work if pasted here, though.
