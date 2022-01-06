@@ -717,6 +717,12 @@ before packages are loaded."
   ;; which wraps the lines that get too long as you type.
   (spacemacs/toggle-fill-column-indicator-globally-on)
 
+  ;; Enable visual line navigation, i.e. if a line is too long and wrapped,
+  ;; moving up and down traverses the wrapped screen lines (as seen), not the
+  ;; file lines separated by EOLs. This can be toggled per buffer: "SPC t L".
+  ;; which wraps the lines that get too long as you type.
+  (spacemacs/toggle-visual-line-navigation-globally-on)
+
   ;; Alt+Up/Down to move the currently selected lines up or down.
   (global-set-key (kbd "<M-up>") 'drag-stuff-up)
   (global-set-key (kbd "<M-down>") 'drag-stuff-down)
@@ -948,6 +954,7 @@ This function is called at the very end of Spacemacs initialization."
      (340 . "#2790C3")
      (360 . "#66D9EF")))
  '(vc-annotate-very-old-color nil)
+ '(visual-line-fringe-indicators '(left-curly-arrow nil))
  '(weechat-color-list
    (unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0"))
  '(xterm-color-names
