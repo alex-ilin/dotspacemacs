@@ -879,6 +879,7 @@ This function is called at the very end of Spacemacs initialization."
    '(company-bbdb company-semantic company-cmake company-capf company-clang company-files
                   (company-dabbrev-code company-gtags company-etags company-keywords)
                   company-dabbrev))
+ '(company-dabbrev-code-ignore-case t)
  '(company-keywords-ignore-case t)
  '(company-quick-access-keys '("a" "o" "e" "u" "h" "t" "s" "i" "d"))
  '(company-show-quick-access 'left)
