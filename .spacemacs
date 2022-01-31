@@ -916,6 +916,7 @@ This function is called at the very end of Spacemacs initialization."
  '(hl-fg-colors
    '("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36"))
  '(magit-diff-use-overlays nil)
+ '(magit-save-repository-buffers 'dontask)
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4"))
  '(package-selected-packages
