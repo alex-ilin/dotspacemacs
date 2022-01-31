@@ -926,6 +926,7 @@ This function is called at the very end of Spacemacs initialization."
  '(pos-tip-foreground-color "#272822")
  '(safe-local-variable-values
    '((projectile-project-run-cmd . "CompileAll.exe")
+     (projectile-project-run-cmd . "make run")
      (projectile-project-compilation-cmd . "make")
      (projectile-project-test-cmd . "make test")
      (projectile-project-run-cmd . "exe/Riedl_SAE_CA.exe")
