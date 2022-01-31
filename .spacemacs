@@ -602,6 +602,10 @@ before packages are loaded."
   ;; Make "U" do the opposite of "u".
   (define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
 
+  ;; Make F9 and C-F9 work like in IDE: run and compile.
+  (define-key evil-normal-state-map (kbd "<f9>") 'projectile-run-project)
+  (define-key evil-normal-state-map (kbd "<C-f9>") 'projectile-compile-project)
+
   ;; Make "D" delete the whole line instead of from caret to end. Use "d $" or
   ;; M-k for the latter.
   (define-key evil-normal-state-map (kbd "D") 'evil-delete-whole-line)
