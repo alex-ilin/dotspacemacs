@@ -810,9 +810,6 @@ before packages are loaded."
   ;; Make sure all saved files have the EOL at the end.
   (setq require-final-newline t)
 
-  ;; Make sure all saved files have the EOL at the end.
-  (setq require-final-newline t)
-
   ;; Display time in the modeline.
   (display-time-mode t)
   (setq display-time-24hr-format t)
