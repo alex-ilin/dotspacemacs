@@ -33,13 +33,12 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     autohotkey
-     windows-scripts
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     autohotkey
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-tab-key-behavior 'cycle)
@@ -65,6 +64,7 @@ This function should only modify configuration layer settings."
      ;; evil-unimpaired
      treemacs
      ;; version-control
+     windows-scripts
      )
 
    ;; List of additional packages that will be installed without being wrapped
