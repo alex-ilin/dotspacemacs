@@ -796,7 +796,7 @@ before packages are loaded."
   (defalias 'repl 'ielm)
 
   ;; Object Pascal mode configuration
-  (add-to-list 'load-path "C:/Programs/Dev/emacs-my/opascal")
+  (add-to-list 'load-path "~/.emacs.d/private/local/opascal")
   (autoload 'opascal-mode "OPascal")
   (add-to-list 'auto-mode-alist
                '("\\.\\(pas\\|dpr\\|dpk\\)\\'" . opascal-mode))
