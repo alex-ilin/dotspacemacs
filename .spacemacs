@@ -719,7 +719,6 @@ before packages are loaded."
   ;; Enable visual line navigation, i.e. if a line is too long and wrapped,
   ;; moving up and down traverses the wrapped screen lines (as seen), not the
   ;; file lines separated by EOLs. This can be toggled per buffer: "SPC t L".
-  ;; which wraps the lines that get too long as you type.
   (spacemacs/toggle-visual-line-navigation-globally-on)
 
   ;; Alt+Up/Down to move the currently selected lines up or down.
