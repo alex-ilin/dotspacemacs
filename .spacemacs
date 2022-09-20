@@ -44,10 +44,11 @@ This function should only modify configuration layer settings."
                       auto-completion-tab-key-behavior 'cycle)
      better-defaults
      emacs-lisp
+     (fsharp :variables fsharp-backend 'lsp)
      git
      helm
      imenu-list
-     ;; lsp
+     lsp
      markdown
      multiple-cursors
      org
@@ -930,6 +931,7 @@ This function is called at the very end of Spacemacs initialization."
    '("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00"))
  '(hl-fg-colors
    '("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36"))
+ '(lsp-ui-doc-enable nil)
  '(magit-diff-use-overlays nil)
  '(magit-save-repository-buffers 'dontask)
  '(nrepl-message-colors
