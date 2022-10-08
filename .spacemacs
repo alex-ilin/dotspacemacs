@@ -808,6 +808,7 @@ before packages are loaded."
   (add-hook 'opascal-mode-hook
             (lambda ()
               (setq imenu-generic-expression opascal-imenu-generic-expression)
+              (modify-syntax-entry ?_ "w") ;; Add _ to word motions.
               (comment-set-column 0)))
 
   (defun ai/delphi-related-files (path)
