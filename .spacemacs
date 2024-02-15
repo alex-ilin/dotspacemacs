@@ -632,6 +632,18 @@ before packages are loaded."
   ;; Make the carendar show Monday as the first day of the week.
   (setq calendar-week-start-day 1)
 
+  ;; Disable saving the undo-tree files, which may trigger the "File name too
+  ;; long" error for deeply nested folders, such as those common in Java
+  ;; projects. Having that error prevents saving the file itself, as well as
+  ;; exiting Emacs altogether (even after saying "no" to the file save prompt).
+  ;; There was a solution proposed here to use a hash of the file path instead
+  ;; of the path itself:
+  ;; https://www.reddit.com/r/emacs/comments/t07e7e/file_name_too_long_error/
+  ;; Unfortunately, that would still allow these files to leak the edited or
+  ;; even temporarily pasted secrets.
+  (with-eval-after-load 'undo-tree
+    (setq undo-tree-auto-save-history nil))
+
   ;; Add character combinations to be picked up by the auto-composition-mode and
   ;; replaced with font ligatures. The font is set here, because the
   ;; dotspacemacs-default-font seems to ignore the antialias option.
