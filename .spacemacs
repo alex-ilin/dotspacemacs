@@ -902,6 +902,7 @@ This function is called at the very end of Spacemacs initialization."
  '(company-quick-access-keys '("a" "o" "e" "u" "h" "t" "s" "i" "d"))
  '(company-show-quick-access 'left)
  '(compilation-message-face 'default)
+ '(create-lockfiles nil)
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
