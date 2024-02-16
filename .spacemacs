@@ -629,7 +629,7 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "<f9>") 'projectile-run-project)
   (define-key evil-normal-state-map (kbd "<C-f9>") 'projectile-compile-project)
 
-  ;; Make the carendar show Monday as the first day of the week.
+  ;; Make the calendar show Monday as the first day of the week.
   (setq calendar-week-start-day 1)
 
   ;; Disable saving the undo-tree files, which may trigger the "File name too
