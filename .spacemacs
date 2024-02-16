@@ -45,7 +45,6 @@ This function should only modify configuration layer settings."
      better-defaults
      emacs-lisp
      git
-     gtags
      helm
      imenu-list
      ;; lsp
