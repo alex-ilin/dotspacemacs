@@ -298,7 +298,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    ;; The actual font is not set here, search for 'default-frame-alist below.
-   dotspacemacs-default-font '("Andale Mono"
+   dotspacemacs-default-font '("Fira Code Retina"
                                :size 10.0
                                :weight normal
                                :width normal
@@ -635,7 +635,7 @@ before packages are loaded."
   ;; Add character combinations to be picked up by the auto-composition-mode and
   ;; replaced with font ligatures. The font is set here, because the
   ;; dotspacemacs-default-font seems to ignore the antialias option.
-  (add-to-list 'default-frame-alist '(font . "Fira Code-10:weight=light:antialias=subpixel"))
+  (add-to-list 'default-frame-alist '(font . "Fira Code Retina-10:weight=light:antialias=subpixel"))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)") ;; !
                  (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)") ;; #
                  (36 . ".\\(?:>\\)") ;; $
