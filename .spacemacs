@@ -873,6 +873,17 @@ before packages are loaded."
 
   ;; Yasnippet configuration.
   (define-key yas-minor-mode-map (kbd "<C-return>") 'yas-expand)
+
+  ;; My macros shall be saved here.
+  ;; This group represents the macros used to do some refactoring in CustomerApp.
+  (fset 'mm-mailbox-map-import-units-and-types
+        (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([103 103 58 94 44 36 115 47 85 95 80 114 111 99 101 115 115 77 97 105 108 98 111 120 32 42 44 47 85 95 77 97 105 108 98 111 120 44 47 103 backspace return 58 94 44 36 115 47 backspace backspace backspace backspace backspace 46 44 36 115 47 84 95 80 114 111 99 101 115 115 77 97 105 108 98 111 120 47 84 95 77 97 105 108 98 111 120 47 103 backspace 103 return 19 return 67 95 82 73 69 68 76 95 71 108 101 backspace 111 98 97 108 return 79 67 95 77 97 105 108 98 111 120 78 97 109 101 115 44 110 104 19 return 85 95 77 97 105 108 98 111 120 95 83 backspace 73 110 116 116 101 114 102 97 99 101 return 79 85 95 77 97 105 108 98 111 120 77 97 112 44 110 104] 0 "%d")) arg)))
+  (fset 'mm-mailbox-map-convert-to-create-mailbox
+        (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("^dt(dwf,xJa:= CreateMailbox(nhf,dt)" 0 "%d")) arg)))
+  (fset 'mm-mailbox-map-change-free-processmb
+        (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("^ct(FreeAndNilnhf,dt)j" 0 "%d")) arg)))
+  (fset 'mm-mailbox-map-change-openglobalmailbox-to-procedure
+        (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([103 103 47 111 112 101 110 95 103 108 111 98 97 108 109 97 105 108 98 111 120 101 115 return 94 99 119 112 114 111 99 101 100 117 114 101 delete 110 104 119 69 108 67 59 110 104 110 94 99 119 112 114 111 99 101 100 117 114 101 134217760 110 104 119 69 108 100 116 59 12 106 50 104 47 82 101 115 117 108 116 return 100 100] 0 "%d")) arg)))
 )
 
 
