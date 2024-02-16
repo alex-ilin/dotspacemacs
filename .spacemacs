@@ -647,7 +647,7 @@ before packages are loaded."
   ;; Add character combinations to be picked up by the auto-composition-mode and
   ;; replaced with font ligatures. The font is set here, because the
   ;; dotspacemacs-default-font seems to ignore the antialias option.
-  (add-to-list 'default-frame-alist '(font . "Fira Code Retina-10:weight=light:antialias=subpixel"))
+  (add-to-list 'default-frame-alist '(font . "Fira Code Retina-10:weight=normal:antialias=subpixel"))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)") ;; !
                  (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)") ;; #
                  (36 . ".\\(?:>\\)") ;; $
