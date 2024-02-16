@@ -51,7 +51,7 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      multiple-cursors
-     org
+     ;; org
      ranger
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -794,40 +794,6 @@ before packages are loaded."
 
   ;; Add a friendly alias for the Emacs REPL function.
   (defalias 'repl 'ielm)
-
-  ;; Org-mode configuration
-  (setq org-directory "d:/AI/org")
-  (setq org-startup-truncated nil)
-
-  ;; Remove empty LOGBOOK drawers on clock out
-  (defun bh/remove-empty-drawer-on-clock-out ()
-    (interactive)
-    (save-excursion
-      (beginning-of-line 0)
-      (org-remove-empty-drawer-at "LOGBOOK" (point))))
-  (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
-  (setq org-todo-keywords
-        (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-                (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
-  (setq org-todo-keyword-faces
-        (quote (("TODO" :foreground "red" :weight bold)
-                ("NEXT" :foreground "blue" :weight bold)
-                ("DONE" :foreground "forest green" :weight bold)
-                ("WAITING" :foreground "orange" :weight bold)
-                ("HOLD" :foreground "magenta" :weight bold)
-                ("CANCELLED" :foreground "forest green" :weight bold)
-                ("MEETING" :foreground "forest green" :weight bold)
-                ("PHONE" :foreground "forest green" :weight bold))))
-  (setq org-treat-S-cursor-todo-selection-as-state-change nil)
-  (setq org-todo-state-tags-triggers
-        (quote (("CANCELLED" ("CANCELLED" . t))
-                ("WAITING" ("WAITING" . t))
-                ("HOLD" ("WAITING") ("HOLD" . t))
-                (done ("WAITING") ("HOLD"))
-                ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
-                ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
-                ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
-  (setq org-log-into-drawer t)
 
   ;; Make sure all saved files have the EOL at the end.
   (setq require-final-newline t)
