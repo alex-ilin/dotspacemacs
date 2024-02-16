@@ -855,7 +855,7 @@ before packages are loaded."
   (setq avy-keys '(?a ?o ?e ?u ?h ?t ?n ?s ?i ?d))
 
   ;; Set the scroll margin.
-  (setq scroll-margin 5)
+  (setq scroll-margin 3)
 
   ;; Add the fill column indicator to the programming modes.
   (add-hook 'prog-mode-hook (lambda ()
