@@ -596,12 +596,6 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
-  ;; Make C-c C-g quit the insert mode.
-  ;; This is not good, because you can't type that quickly: C-g cancels
-  ;; the whole combo, unless you wait for the menu to appear at the bottom
-  ;; of the screen.
-  ;; (global-set-key (kbd "C-c C-g") 'evil-escape)
-
   ;; Make "nh" typed quickly exit from Insert mode to Normal mode.
   (setq-default evil-escape-key-sequence "nh")
   (setq-default evil-escape-delay 0.2)
