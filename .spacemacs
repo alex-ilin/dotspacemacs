@@ -297,7 +297,7 @@ It should only modify the values of Spacemacs settings."
    ;; Point size is recommended, because it's device independent. (default 10.0)
    ;; The actual font is not set here, search for 'default-frame-alist below.
    dotspacemacs-default-font '("Andale Mono"
-                               :size 12
+                               :size 10.0
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
