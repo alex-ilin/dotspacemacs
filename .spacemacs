@@ -775,8 +775,8 @@ before packages are loaded."
   ;; (require 'everything)
 
   ;; Factor configuration with the FUEL:
-  (setq fuel-factor-root-dir "c:/Programs/Dev/factor.git")
-  (add-to-list 'load-path "c:/Programs/Dev/factor.git/misc/fuel")
+  (setq fuel-factor-root-dir "c:/Programs/factor")
+  (add-to-list 'load-path "c:/Programs/factor/misc/fuel")
   (require 'factor-mode)
   (require 'fuel-mode)
 
