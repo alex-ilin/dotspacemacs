@@ -759,6 +759,11 @@ before packages are loaded."
   ;;   (dolist (x '("*idris-notes*" "*idris-holes*" "*idris-info*"))
   ;;     (plist-put (cdr (assoc x popwin:special-display-config)) :noselect t)))
 
+  ;; Everything integration package for file search.
+  ;; (add-to-list 'load-path "C:/AI/Src/")
+  ;; (setq everything-cmd "C:/Programs/Bin/es.exe")
+  ;; (require 'everything)
+
   ;; Factor configuration with the FUEL:
   (setq fuel-factor-root-dir "c:/Programs/Dev/factor.git")
   (add-to-list 'load-path "c:/Programs/Dev/factor.git/misc/fuel")
