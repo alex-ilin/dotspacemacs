@@ -47,7 +47,8 @@ This function should only modify configuration layer settings."
      git
      helm
      imenu-list
-     ;; lsp
+     java
+     lsp
      markdown
      multiple-cursors
      org
