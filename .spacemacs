@@ -796,7 +796,7 @@ before packages are loaded."
   (defalias 'repl 'ielm)
 
   ;; Make sure all saved files have the EOL at the end.
-  (setq require-final-newline t)
+  ;; (setq require-final-newline t)
 
   ;; Display time in the modeline.
   (display-time-mode t)
