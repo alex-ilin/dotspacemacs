@@ -795,21 +795,6 @@ before packages are loaded."
   ;; Add a friendly alias for the Emacs REPL function.
   (defalias 'repl 'ielm)
 
-  ;; Object Pascal mode configuration
-  (add-to-list 'load-path "C:/Programs/Dev/emacs-my/opascal")
-  (autoload 'opascal-mode "OPascal")
-  (add-to-list 'auto-mode-alist
-               '("\\.\\(pas\\|dpr\\|dpk\\)\\'" . opascal-mode))
-  (setq opascal-indent-level 2)
-
-  ;; imenu support for the OPascal mode
-  (setq opascal-imenu-generic-expression
-        '(("methods" "\\(procedure\\|function\\|constructor\\|destructor\\)\\b+\\(.*\\)" 2)))
-  (add-hook 'opascal-mode-hook
-            (lambda ()
-              (setq imenu-generic-expression opascal-imenu-generic-expression)
-              (comment-set-column 0)))
-
   ;; Org-mode configuration
   (setq org-directory "d:/AI/org")
   (setq org-startup-truncated nil)
